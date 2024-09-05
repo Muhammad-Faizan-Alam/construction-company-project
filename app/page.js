@@ -1,7 +1,18 @@
 import React from 'react'
+import Index from './components'
+import Header from './components/Header'
+import Home from './components/Home'
+import Practice from './components/Practice'
 
-export const Home = () => {
+const Page = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Header />
+      <Home />
+      {/* <Index /> */}
+      {/* <Practice /> */}
+    </div>
   )
 }
+
+export default Page

@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+.imgBox {
+    @apply flex-1 bg-no-repeat bg-cover border border-black transition-all duration-500;
+}
