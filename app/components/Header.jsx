@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mobMode, setStateSelector } from '../store/slice/Slice';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Over ons', 'Diensten', 'Contact'];
+const navItems = ['Home', 'About Us', 'Services', 'Contact'];
 
 function Header(props) {
     const { window } = props;

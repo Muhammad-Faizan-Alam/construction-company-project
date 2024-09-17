@@ -1,60 +1,85 @@
 "use client";
-// import React, { useState } from 'react';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Box, Button, FilledInput, FormControl, IconButton, InputAdornment, InputLabel, Link, styled, TextField, Typography } from '@mui/material'
+import React from 'react'
 
-// const Practice = () => {
-//     const [backgroundImage, setBackgroundImage] = useState('url("https://imgs.search.brave.com/VcdEQ02oLqcy8gTZyx6erFbRE75Y2J_8aG22-ziNk4M/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzIwLzM5LzA0/LzM2MF9GXzcyMDM5/MDQ5MF9leHdjMFF3/OE9rT0EwVTV0cXpo/b2YxYWZFQTRzWkta/Ui5qcGc")');
-
-//     return (
-//         <div className="flex w-full h-96 overflow-hidden">
-//             <div
-//                 className="flex-1 bg-cover bg-no-repeat bg-[left]"
-//                 style={{ backgroundImage: backgroundImage }}
-//                 onMouseEnter={() => setBackgroundImage('url("https://imgs.search.brave.com/VcdEQ02oLqcy8gTZyx6erFbRE75Y2J_8aG22-ziNk4M/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzIwLzM5LzA0/LzM2MF9GXzcyMDM5/MDQ5MF9leHdjMFF3/OE9rT0EwVTV0cXpo/b2YxYWZFQTRzWkta/Ui5qcGc")')}
-//             ></div>
-//             <div
-//                 className="flex-1 bg-cover bg-no-repeat bg-[center]"
-//                 style={{ backgroundImage: backgroundImage }}
-//                 onMouseEnter={() => setBackgroundImage('url("https://imgs.search.brave.com/O77Iw1UIF3cSbM5b1SFJsYSwDzHNTBvnivyNnDP0tHo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtcGxhdGZvcm0u/OTlzdGF0aWMuY29t/Ly8xYWRCcUs1TVFz/N290dXBJTkpZUE5k/dWNlbmM9LzE5OHgx/NzY6NzY1eDc0My9m/aXQtaW4vNTAweDUw/MC85OWRlc2lnbnMt/Y29udGVzdHMtYXR0/YWNobWVudHMvODEv/ODEwMzYvYXR0YWNo/bWVudF84MTAzNjg4/MA.jpeg")')}
-//             ></div>
-//             <div
-//                 className="flex-1 bg-cover bg-no-repeat bg-[right]"
-//                 style={{ backgroundImage: backgroundImage }}
-//                 onMouseEnter={() => setBackgroundImage('url("https://imgs.search.brave.com/4ZQtgikIk9-VIlQb9RTa9JFYVWTaWr6ark60K88rImQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ncmVlbi1sb2dv/LXdpdGgtd2hpdGUt/bG9nby10aGF0LXNh/eXNob3UtZ3Jpc25v/bi1pdF8xMjg5NDcy/LTU5OC5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw")')}
-//             ></div>
-//         </div>
-//     );
-// };
-
-// export default Practice;
-
-import React, { useState } from 'react';
+const MainSection = styled(Box)({
+    width: '100vw',
+    // height: '100vh',
+})
+const FormSection = styled(Box)({
+    width: '30vw',
+    height: '65vh',
+    marginLeft: '35%',
+    marginTop: '10%',
+    border: '2px solid #1976D2;', // Light gray border
+    borderRadius: '10px', // Optional: gives rounded corners
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Soft shadow
+    padding: '3rem',
+});
 
 const Practice = () => {
-  const [bgImage, setBgImage] = useState('url(https://imgs.search.brave.com/R0sSLHMnicscCJbRuCVSToKMpA06qZgBkOjTlAuzfRc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGVt/ZW50cy1yZXNpemVk/LmVudmF0b3VzZXJj/b250ZW50LmNvbS9l/bGVtZW50cy12aWRl/by1jb3Zlci1pbWFn/ZXMvZmlsZXMvMzE2/MDMxOTc1LzE5MjB4/MTA4MC5qcGc_dz01/MDAmaD0yODEmY2Zf/Zml0PWNvdmVyJnE9/ODUmZm9ybWF0PWF1/dG8mcz05MmUwYzA4/MmE4YmMyOGM2NGJi/MTk2MmNmMGQyZjg2/ODAyOGYxZjgyNmMz/ZmNmZWUyYTU2MjJj/Mjg4MmRlYmZj)');
+    const [showPassword, setShowPassword] = React.useState(false);
 
-  const handleHover = (imageUrl) => {
-    setBgImage(`url(${imageUrl})`);
-  };
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  return (
-    <div className="flex w-[70vw] h-[70vh] overflow-hidden">
-      <div
-        className="flex-1 bg-no-repeat bg-cover border transition-all duration-500"
-        style={{ backgroundImage: bgImage, backgroundPosition: 'left', backgroundSize: '300%' }}
-        onMouseEnter={() => handleHover('https://imgs.search.brave.com/bdtcuM1GCzuWoXuZWhyG-Aq2xw8O8K9z8ITycVNIg9c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzQ0LzYxLzA4/LzM2MF9GXzI0NDYx/MDg1M19jTHB2bDl1/M1RIQ3BCNXdYYzdI/N04xVEtFU3VZblJm/Ri5qcGc')}
-      ></div>
-      <div
-        className="flex-1 bg-no-repeat bg-cover border transition-all duration-500"
-        style={{ backgroundImage: bgImage, backgroundPosition: 'center', backgroundSize: '300%' }}
-        onMouseEnter={() => handleHover('https://imgs.search.brave.com/RAIcpHmuMDo-ACALHpl0_awWcP3xTuSF_opZDyhFRHs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA4LzA2LzU5Lzk3/LzM2MF9GXzgwNjU5/OTc5MV8xc3owcHlp/dFBjc283bFFFSEIy/NVhXbFdZWHJLaDJu/US5qcGc')}
-      ></div>
-      <div
-        className="flex-1 bg-no-repeat bg-cover border transition-all duration-500"
-        style={{ backgroundImage: bgImage, backgroundPosition: 'right', backgroundSize: '300%' }}
-        onMouseEnter={() => handleHover('https://imgs.search.brave.com/YPdDvIW_LP5K5SPkUMcb1ga7ZLlV1ohyWLInvMH50mA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0LzM3LzI3LzYx/LzM2MF9GXzQzNzI3/NjExMF9tQ1dQZmhp/TFlvUnhiZ3E1bFRa/Nm1WWXo1eWNPUjJL/My5qcGc')}
-      ></div>
-    </div>
-  );
-};
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
 
-export default Practice;
+    const handleMouseUpPassword = (event) => {
+        event.preventDefault();
+    };
+    return (
+        <MainSection>
+            <FormSection>
+                <TextField sx={{ width: '100%' }}
+                    required
+                    id="filled-required"
+                    label="Enter Your Email"
+                    //   defaultValue="Hello World"
+                    variant="filled"
+                />
+
+                {/* password field */}
+                <FormControl sx={{ width: '100%', marginTop: '1rem' }} variant="filled">
+                    <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+                    <FilledInput
+                        id="filled-adornment-password"
+                        type={showPassword ? 'text' : 'password'}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                    onMouseUp={handleMouseUpPassword}
+                                    edge="end"
+                                >
+                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+
+                {/* submit button */}
+                <Button sx={{ width: '100%', marginTop: '1rem', fontWeight: '600' }} variant="outlined">Login</Button>
+
+                {/* sinUp */}
+                <Link href="#" underline="hover" sx={{ width: '100%', fontSize: '1rem', marginTop: '1rem', fontWeight: '600', textAlign: 'center' }}>
+                    {'SinUp as new user?'}
+                </Link>
+
+                {/* other options */}
+                <Typography sx={{ width: '100%', fontSize: '1rem', marginTop: '1rem', fontWeight: '600', textAlign: 'center' }}>Or, continue with:</Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '1rem' }}>
+                    <Button sx={{ width: '40%', backgroundColor: '#E54336' }} variant="contained">Google</Button>
+                    <Button sx={{ width: '40%' }} variant="contained">Facebook</Button>
+                </Box>
+            </FormSection>
+        </MainSection>
+    )
+}
+
+export default Practice
