@@ -1,9 +1,11 @@
 "use client"
 import { createSlice } from '@reduxjs/toolkit';
+import { dataPromise } from '../api/api';
 
 const initialState = {
 	mobileOpen: false,
-	bgImage: '/images/img1.avif'
+	bgImage: '/images/img1.avif',
+	data: dataPromise
 };
 
 const bouwSlice = createSlice({

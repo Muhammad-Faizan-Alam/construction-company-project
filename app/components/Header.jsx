@@ -13,25 +13,24 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { Avatar, Card, CardMedia } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
-import { mobMode, setStateSelector } from '../store/slice/Slice';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { mobMode, setStateSelector } from '../store/slice/Slice';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About Us', 'Services', 'Contact'];
 
 function Header(props) {
     const { window } = props;
-    // const [mobileOpen, setMobileOpen] = useState(false);
-    const dispatch = useDispatch();
-    const { mobileOpen } = useSelector(setStateSelector);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    // const dispatch = useDispatch();
+    // const { mobileOpen } = useSelector(setStateSelector);
 
     const handleDrawerToggle = () => {
-        // setMobileOpen((prevState) => !prevState);
-        dispatch(mobMode());
+        setMobileOpen((prevState) => !prevState);
+        // dispatch(mobMode());
     };
 
     const drawer = (
